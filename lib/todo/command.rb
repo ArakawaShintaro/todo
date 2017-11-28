@@ -14,7 +14,7 @@ module Todo
       DB.prepare
     end
 
-    def Tp(name, content)
+    def create_task(name, content)
       Task.create!(name: name, content: content).reload
     end
 
@@ -24,7 +24,6 @@ module Todo
     end
 
     def update_task(id, attributes)
-      binding.pry
       if status_name = attributes[:status]
         attributes[:status] = Task::STATUS.fetch(status_name.upcase.to_sym)
       end
