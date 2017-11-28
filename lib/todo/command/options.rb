@@ -1,4 +1,5 @@
 require 'optparse'
+require 'pry'
 
 module Todo
   class Command
